@@ -35,17 +35,22 @@ export const experience = [
       'Helped check the readiness of hardware — PCs, laptops, and printers — to support the work unit’s daily operations.',
       'Observed and learned first-level handling steps for helpdesk complaints.',
       'Learned to record system maintenance reports and antivirus updates according to standard operating procedures (SOP).',
-      'Designed social media content to support publication needs.',
+      'Designed Instagram feed content and edited videos to support the unit’s publication needs.',
+      'Built an Integrated Queue Management System: a direct customer-service application that connects the kiosk ticket machine, the teller counter dashboard, and the waiting-room information display on one local network.',
+      'Developed the whole system in full JavaScript, using Node.js, Socket.io, and a relational database on the server side, with a Vite-based React/Vue front end for the interface.',
+      'Packaged the web application with Tauri into a lightweight Windows desktop app that starts automatically in full-screen mode and prints receipts directly to a thermal printer.',
     ],
   },
   {
-    year: 'Intern', // TODO: replace with the internship year once you confirm the dates
+    year: 2025,
     company: 'PT Usaha Saudara Mandiri',
     role: 'Digital Marketing Intern',
-    period: 'Internship program', // TODO: add the exact period, e.g. 'Aug 2025 – Dec 2025'
+    period: 'Aug 2025 – Dec 2025',
     blurb: 'The role of digital marketing in raising brand awareness and engagement through visual content.',
     points: [
       'Produced visual content — graphic design, photos, and videos — to support the company’s digital marketing strategy.',
+      'Updated product photos and model photos on the unitedheater.co.id website.',
+      'Improved the search engine optimization (SEO) of unitedheater.co.id.',
       'Contributed to raising brand awareness and engagement through visual content.',
       'Tools: Adobe Illustrator, Photoshop, After Effects, Premiere Pro, Lightroom, CapCut, and Canva.',
     ],
@@ -264,9 +269,32 @@ export const keycaps = [
 ]
 
 export const softSkills = ['Teamwork', 'Communication', 'Quick Learner', 'Responsibility', 'Initiative', 'Discipline', 'Adaptability']
+
+// Round logo badges. bg = warna lingkaran, fg = warna huruf, abbr = huruf yang tampil.
+// Untuk memakai file logo resmi, tambahkan  img: '/img/logos/nama-file.svg'  (simpan file di public/img/logos/).
 export const software = [
-  'Microsoft Office', 'Adobe Illustrator (AI)', 'Adobe Photoshop (PS)', 'Adobe After Effects (AE)', 'Adobe Premiere Pro',
-  'Adobe Lightroom (LR)', 'CapCut', 'Canva', 'Blender', 'MATLAB', 'Visual Studio Code', 'AutoCAD', 'ArcGIS',
+  { name: 'Microsoft Office', abbr: 'Of', img: '/img/logos/office.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Adobe Illustrator', abbr: 'Ai', img: '/img/logos/illustrator.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Adobe Photoshop', abbr: 'Ps', img: '/img/logos/photoshop.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Adobe After Effects', abbr: 'Ae', img: '/img/logos/after-effects.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Adobe Premiere Pro', abbr: 'Pr', img: '/img/logos/premiere-pro.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Adobe Lightroom', abbr: 'Lr', img: '/img/logos/lightroom.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'CapCut', abbr: 'Cc', img: '/img/logos/capcut.png', bg: '#ffffff', fg: '#000000' },
+  { name: 'Canva', abbr: 'Ca', img: '/img/logos/canva.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Blender', abbr: 'Bl', img: '/img/logos/blender.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'MATLAB', abbr: 'M', img: '/img/logos/matlab.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Visual Studio Code', abbr: 'VS', img: '/img/logos/vscode.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'AutoCAD', abbr: 'A', img: '/img/logos/autocad.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'ArcGIS', abbr: 'Ag', img: '/img/logos/arcgis.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'SketchUp', abbr: 'Sk', img: '/img/logos/sketchup.svg', bg: '#ffffff', fg: '#000000' },
+] 
+export const aiAssistants = [
+  { name: 'Claude', abbr: 'C', img: '/img/logos/claude.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Gemini', abbr: 'G', img: '/img/logos/gemini.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'ChatGPT', abbr: 'GPT', img: '/img/logos/chatgpt.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'DeepSeek', abbr: 'DS', img: '/img/logos/deepseek.svg', bg: '#ffffff', fg: '#000000' },
+  { name: 'Dreamina', abbr: 'Dr', img: '/img/logos/dreamina.png', bg: '#ffffff', fg: '#000000' },
+  { name: 'Blackbox AI', abbr: 'Bb', img: '/img/logos/blackbox.png', bg: '#ffffff', fg: '#000000' },
+  { name: 'Copilot', abbr: 'Co', img: '/img/logos/copilot.svg', bg: '#ffffff', fg: '#000000' },
 ]
-export const aiAssistants = ['Claude', 'Gemini', 'ChatGPT', 'DeepSeek', 'Dreamina', 'Blackbox AI', 'VS Code', 'Copilot']
 export const achievements = ['Rokan Hilir Regency Government Scholarship 2022–2026']

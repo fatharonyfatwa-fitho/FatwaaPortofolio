@@ -102,11 +102,25 @@ export default function Skills() {
             >
               <h5>{title}</h5>
               <div className="row">
-                {list.map((s) => (
-                  <m.span key={s} className="chip" whileHover={{ y: -3, rotate: -2 }}>
-                    {s}
-                  </m.span>
-                ))}
+                {list.map((s) =>
+                  typeof s === 'string' ? (
+                    <m.span key={s} className="chip" whileHover={{ y: -3, rotate: -2 }}>
+                      {s}
+                    </m.span>
+                  ) : (
+                    <m.span
+                      key={s.name}
+                      className={`logo ${!s.img && s.abbr.length > 2 ? 'sm' : ''}`}
+                      data-name={s.name}
+                      role="img"
+                      aria-label={s.name}
+                      style={{ background: s.bg, color: s.fg }}
+                      whileHover={{ y: -4, scale: 1.08 }}
+                    >
+                      {s.img ? <img src={s.img} alt='' /> : s.abbr}
+                    </m.span>
+                  ),
+                )}
               </div>
             </m.div>
           ))}
