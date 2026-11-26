@@ -9,7 +9,7 @@ import Education from './components/Education'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
-import Featured from './components/Featured'
+import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import { Cursor } from './components/ui'
 
@@ -54,7 +54,7 @@ export default function App() {
         <Skills />
         <Projects />
         <Experience />
-        <Featured />
+        <Certificates />
         <Contact />
       </main>
     </LazyMotion>

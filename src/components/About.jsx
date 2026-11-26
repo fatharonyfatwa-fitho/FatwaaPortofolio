@@ -7,7 +7,12 @@ function IdBadge() {
   const zone = useRef(null)
   const inView = useInView(zone, { once: true, margin: '-20% 0px' })
   const x = useMotionValue(0)
+  const y = useMotionValue(0)
   const rotate = useSpring(useTransform(x, [-220, 220], [28, -28]), { stiffness: 120, damping: 8 })
+  // the strap is a string pinned STRAP px above the lanyard: it tilts and stretches as the card is dragged
+  const STRAP = 420
+  const strapAngle = useTransform([x, y], ([vx, vy]) => -(Math.atan(vx / (STRAP + vy)) * 180) / Math.PI)
+  const strapScale = useTransform([x, y], ([vx, vy]) => Math.hypot(STRAP + vy, vx) / STRAP)
 
   return (
     <div className="badge-zone" ref={zone}>
@@ -17,10 +22,13 @@ function IdBadge() {
         transition={{ type: 'spring', stiffness: 70, damping: 9 }}
         style={{ position: 'absolute', top: 0, display: 'flex', justifyContent: 'center' }}
       >
-        <div className="anim-sway" style={{ transformOrigin: '50% -40px' }}>
+        <m.div className="strap-rot" style={{ rotate: strapAngle, originX: 0.5, originY: 0 }}>
+          <m.div className="strap" style={{ scaleY: strapScale, originX: 0.5, originY: 0 }} />
+        </m.div>
+        <div className="anim-sway" style={{ transformOrigin: '50% 0px' }}>
           <m.div
             className="id-wrap"
-            style={{ x, rotate }}
+            style={{ x, y, rotate }}
             drag
             dragSnapToOrigin
             dragElastic={0.4}

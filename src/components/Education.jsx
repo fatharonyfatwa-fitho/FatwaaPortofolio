@@ -7,38 +7,8 @@ const N = '#1c3362'
 const D = '#172b54'
 const C = '#f1efea'
 
-function Campus() {
-  return (
-    <svg viewBox="0 0 200 200">
-      <rect width="200" height="200" fill={D} />
-      <circle cx="160" cy="44" r="16" fill={C} opacity=".9" />
-      <rect x="30" y="92" width="140" height="80" fill={C} />
-      <path d="M22 96 L100 52 L178 96 Z" fill={C} />
-      {[46, 74, 102, 130].map((x) => (
-        <rect key={x} x={x} y="108" width="14" height="52" fill={N} />
-      ))}
-      <rect x="22" y="168" width="156" height="8" fill={C} />
-      <rect x="99" y="22" width="2" height="34" fill={C} />
-      <path d="M101 22 h22 l-6 6 6 6 h-22z" fill={C} className="anim-flag" style={{ transformOrigin: '101px 28px' }} />
-      <text x="100" y="88" textAnchor="middle" fontFamily="Fredoka" fontWeight="600" fontSize="14" fill={N}>PCR</text>
-    </svg>
-  )
-}
-
-function Cap() {
-  return (
-    <svg viewBox="0 0 200 200">
-      <rect width="200" height="200" fill={D} />
-      <path d="M100 58 L178 92 L100 126 L22 92 Z" fill={C} />
-      <path d="M58 108 v30 c0 14 84 14 84 0 v-30 l-42 18z" fill={C} opacity=".85" />
-      <g className="anim-tassel" style={{ transformOrigin: '150px 100px' }}>
-        <path d="M150 100 v44" stroke={C} strokeWidth="3" />
-        <rect x="143" y="142" width="14" height="20" rx="3" fill={C} />
-      </g>
-      <text x="100" y="186" textAnchor="middle" fontFamily="Caveat" fontWeight="700" fontSize="22" fill={C}>d4 informatics</text>
-    </svg>
-  )
-}
+const CampusPhoto = () => <img src="/img/edu-campus.webp" alt="Politeknik Caltex Riau campus building" draggable="false" />
+const GraduationPhoto = () => <img src="/img/edu-graduation.webp" alt="Graduation day, class of 2026" draggable="false" />
 
 function Gpa() {
   return (
@@ -56,8 +26,8 @@ function Gpa() {
 }
 
 const shots = [
-  { id: 'campus', Art: Campus, caption: 'pcr, pekanbaru', x: '2%', y: 40, r: -8 },
-  { id: 'cap', Art: Cap, caption: 'class of 2026', x: '30%', y: 0, r: 5 },
+  { id: 'campus', Art: CampusPhoto, caption: 'pcr, pekanbaru', x: '2%', y: 40, r: -8 },
+  { id: 'cap', Art: GraduationPhoto, caption: 'class of 2026', x: '30%', y: 0, r: 5 },
   { id: 'gpa', Art: Gpa, caption: 'proud moment', x: '18%', y: 210, r: -3 },
 ]
 

@@ -32,8 +32,9 @@ export default function Skills() {
   const visible = useInView(box)
   const current = skillCategories.find((c) => c.id === active)
   const toggle = (id) => setActive((a) => (a === id ? null : id))
-  const left = skillCategories.slice(0, 2)
-  const right = skillCategories.slice(2)
+  const half = Math.ceil(skillCategories.length / 2)
+  const left = skillCategories.slice(0, half)
+  const right = skillCategories.slice(half)
 
   return (
     <section className="sec cream" id="skills">
@@ -67,16 +68,23 @@ export default function Skills() {
         <AnimatePresence mode="wait">
           <m.div key={active || 'none'} className="skill-items" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.15 } }}>
             {current ? (
-              current.items.map((s, i) => (
-                <m.span
-                  key={s}
-                  className="chip fill"
-                  initial={{ opacity: 0, y: 16, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 18, delay: i * 0.04 }}
-                >
-                  {s}
-                </m.span>
+              current.groups.map((g) => (
+                <div className="skill-group" key={g.title}>
+                  <h6>{g.title}</h6>
+                  <div className="row">
+                    {g.items.map((s, i) => (
+                      <m.span
+                        key={s}
+                        className="chip fill"
+                        initial={{ opacity: 0, y: 16, scale: 0.8 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 18, delay: i * 0.04 }}
+                      >
+                        {s}
+                      </m.span>
+                    ))}
+                  </div>
+                </div>
               ))
             ) : (
               <span className="body-serif" style={{ color: 'var(--ink-soft)' }}>

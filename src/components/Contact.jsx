@@ -89,7 +89,7 @@ export default function Contact() {
               </Magnetic>
               <Magnetic>
                 <a className="btn" href="/cv-fatharony-fatwa.pdf" download>
-                  Download CV <Arrow />
+                  Download CV 
                 </a>
               </Magnetic>
             </div>

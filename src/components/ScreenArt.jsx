@@ -259,6 +259,55 @@ const arts = {
       <Bar x={16} y={170} w={52} o={0.4} />
     </>
   ),
+
+  form: (loop) => (
+    <>
+      <circle cx="75" cy="36" r="16" fill={N} />
+      <path d="M44 84 a31 26 0 0 1 62 0z" fill={N} />
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <rect x="16" y={100 + i * 24} width="118" height="14" rx="5" fill={S} />
+          <m.rect x="16" y={100 + i * 24} height="14" rx="5" fill={N} animate={{ width: [8, 44 + i * 28, 44 + i * 28, 8] }} transition={loop(3.6, i * 0.3)} />
+        </g>
+      ))}
+      <m.rect x="16" y="172" width="118" height="20" rx="10" fill={N} animate={{ opacity: [0.45, 1, 0.45] }} transition={loop(2.2)} />
+      <Bar x={52} y={180} w={46} o={0} />
+    </>
+  ),
+  queue: (loop) => (
+    <>
+      <rect x="16" y="16" width="118" height="70" rx="10" fill={N} />
+      {['A12', 'A13', 'A14'].map((t, i) => (
+        <m.text key={t} x="75" y="63" textAnchor="middle" fill="#f1efea" fontSize="32" fontWeight="700" initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 1, 0, 0] }} transition={loop(4.5, i * 1.5, { times: [0, 0.03, 0.3, 0.33, 1] })}>
+          {t}
+        </m.text>
+      ))}
+      <rect x="44" y="100" width="62" height="22" rx="6" fill={N} />
+      <m.rect x="56" width="38" height="30" rx="2" fill={S} stroke={N} strokeWidth="1.5" animate={{ y: [106, 126, 126, 106] }} transition={loop(2.8)} />
+      {[0, 1].map((i) => (
+        <g key={i}>
+          <rect x={16 + i * 62} y="150" width="56" height="38" rx="8" fill={S} />
+          <Bar x={24 + i * 62} y={160} w={30} />
+          <m.circle cx={36 + i * 62} cy="176" r="5" fill={N} animate={{ scale: [0.5, 1, 0.5] }} transition={loop(1.8, i * 0.6)} />
+        </g>
+      ))}
+    </>
+  ),
+  anim: (loop) => (
+    <>
+      <rect x="22" y="56" width="106" height="82" rx="8" fill={N} />
+      <m.g animate={{ rotate: [-14, 0, -14] }} style={{ transformOrigin: '22px 54px' }} transition={loop(1.8)}>
+        <rect x="22" y="36" width="106" height="18" rx="5" fill={N} />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${34 + i * 22} 36 l12 0 l-8 18 l-12 0z`} fill="#f1efea" opacity=".85" />
+        ))}
+      </m.g>
+      <m.path d="M66 82 l24 14 -24 14z" fill="#f1efea" animate={{ scale: [1, 1.15, 1] }} style={{ transformOrigin: '78px 96px' }} transition={loop(1.8)} />
+      <rect x="16" y="156" width="118" height="10" rx="5" fill={S} />
+      <m.rect x="16" y="156" height="10" rx="5" fill={N} animate={{ width: [10, 118, 10] }} transition={loop(3.4)} />
+      <Bar x={16} y={178} w={64} />
+    </>
+  ),
 }
 
 export default function ScreenArt({ kind, preserve = 'xMidYMid slice' }) {
